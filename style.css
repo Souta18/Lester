@@ -1,0 +1,113 @@
+:root{
+  --frame-color: #ffffff;      
+  --frame-text-color: #0b0a0b; 
+  --bg-top: #26245b;
+  --bg-bottom: #1d2d51;
+  --panel-white: #ffffff;
+  --soft-pink: #292a4f;
+  --rose-deep: #4f3135;
+  --blush: #2563eb; /* changed to blue */
+  --muted: #4b3b3b;
+  --card-radius: 28px;
+  --frame-radius: 40px;
+  --frame-thick: 18px;
+  --max-w: 980px;
+  --gap: 20px;
+  --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));font-family:var(--sans);-webkit-font-smoothing:antialiased;color:var(--muted)}
+
+.site-header{
+  max-width:var(--max-w);
+  margin:24px auto 0;
+  padding:20px 28px;
+  background:linear-gradient(90deg,#f7fbff,#e8f1ff); /* changed to blue tones */
+  border-top:var(--frame-thick) solid var(--frame-color);
+  border-left:var(--frame-thick) solid var(--frame-color);
+  border-right:var(--frame-thick) solid var(--frame-color);
+  border-top-left-radius:var(--frame-radius);
+  border-top-right-radius:var(--frame-radius);
+  box-shadow:0 18px 40px rgba(11,10,11,0.18);
+  position:relative;
+}
+
+.container{
+  max-width:var(--max-w);
+  margin:0 auto 28px;
+  padding:28px;
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:var(--gap);
+  background:linear-gradient(90deg,#e8f1ff,#d6eaff); /* changed to blue tones */
+  border-left:var(--frame-thick) solid var(--frame-color);
+  border-right:var(--frame-thick) solid var(--frame-color);
+  border-bottom:var(--frame-thick) solid var(--frame-color);
+  border-bottom-left-radius:var(--frame-radius);
+  border-bottom-right-radius:var(--frame-radius);
+  box-shadow:0 18px 40px rgba(11,10,11,0.12);
+  align-items:start;
+}
+
+.profile{display:flex;align-items:center;gap:18px}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:8px solid var(--panel-white);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+.meta h1{margin:0;font-size:36px;color:var(--frame-text-color);letter-spacing:-0.6px}
+.meta p{margin:4px 0;color:var(--muted)}
+
+.card{
+  background:var(--panel-white);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(11,10,11,0.06);
+}
+
+.about-card{
+  border-radius:36px;
+  padding:22px;
+}
+
+.left-col{display:flex;flex-direction:column;gap:var(--gap)}
+
+.card h2{
+  margin:0 0 12px 0;
+  display:inline-block;
+  background:var(--panel-white);
+  color:var(--frame-text-color);
+  padding:8px 16px;
+  border-radius:999px;
+  box-shadow:0 8px 18px rgba(11,10,11,0.08);
+  font-size:15px;
+  font-weight:700;
+}
+
+.skills-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.skill{width:calc(50% - 6px);display:flex;flex-direction:column;align-items:center;text-align:center}
+.radial{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#0b1220;font-weight:700;background:conic-gradient(#e6eefc 0deg, #e6eefc 360deg);box-shadow:inset 0 -6px 12px rgba(0,0,0,0.03);font-size:13px}
+.r75{background: conic-gradient(var(--blush) 0deg, var(--blush) calc(360deg * 0.75), #eff8ff calc(360deg * 0.75));}
+.r60{background: conic-gradient(var(--blush) 0deg, var(--blush) calc(360deg * 0.60), #eff8ff calc(360deg * 0.60));}
+.r50{background: conic-gradient(var(--blush) 0deg, var(--blush) calc(360deg * 0.50), #f0f9ff calc(360deg * 0.50));}
+.r70{background: conic-gradient(var(--blush) 0deg, var(--blush) calc(360deg * 0.70), #f0f9ff calc(360deg * 0.70));}
+.skill-name{margin-top:8px;font-size:13px;color:var(--muted)}
+
+.right-col{display:flex;flex-direction:column;gap:var(--gap)}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.project{padding:12px;border-radius:14px;background:linear-gradient(180deg,#f8fbff,#f3f9ff);min-height:76px;display:flex;flex-direction:column;justify-content:center}
+.project h3{margin:0 0 6px 0;font-size:15px;color:var(--frame-text-color)}
+.project p{margin:0;color:var(--muted);font-size:13px}
+
+.education-card{border-radius:20px}
+
+.site-footer{text-align:center;padding:18px 0;color:var(--muted);font-size:13px}
+
+
+@media (max-width:980px){
+  .site-header,.container{max-width:calc(100% - 48px)}
+  .container{grid-template-columns:1fr; padding:20px}
+  .avatar{width:96px;height:96px}
+  .meta h1{font-size:28px}
+  .projects{grid-template-columns:1fr}
+  .skill{width:50%}
+  .site-header .profile::after{right:20px;top:8px}
+}
